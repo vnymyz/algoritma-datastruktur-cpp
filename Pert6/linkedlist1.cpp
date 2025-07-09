@@ -2,21 +2,21 @@
 using namespace std;
 
 // Definisi node linked list
-struct Node {
+struct node {
     int data;       // menyimpan nilai
-    Node* next;     // menunjuk ke node berikutnya
+    node* next;     // menunjuk ke node berikutnya
 };
 
-Node* head = nullptr; // kepala dari linked list
+node* head = nullptr; // kepala dari linked list
 
 // Fungsi untuk menambahkan node di akhir list
 void tambah(int nilai) {
-    Node* baru = new Node{nilai, nullptr};
+    node* baru = new node{nilai, nullptr};
     
     if (!head) {
         head = baru; // jika kosong, node baru jadi head
     } else {
-        Node* temp = head;
+        node* temp = head;
         while (temp->next) {   // cari node terakhir
             temp = temp->next;
         }
@@ -26,7 +26,7 @@ void tambah(int nilai) {
 
 // Fungsi untuk menampilkan isi linked list
 void tampilkan() {
-    Node* temp = head;
+    node* temp = head;
     cout << "Isi Linked List: ";
     while (temp) {
         cout << temp->data << " -> ";
@@ -40,6 +40,8 @@ int main() {
     tambah(10);
     tambah(20);
     tambah(30);
+    tambah(40);
+    tambah(50);
 
     tampilkan();  // Output: 10 -> 20 -> 30 -> NULL
 
