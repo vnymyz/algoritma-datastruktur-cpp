@@ -309,3 +309,11 @@ int main() {
 | Array Queue       | Mudah dipahami              | Tidak efisien setelah dequeue |
 | Circular Queue    | Efisien dengan memori tetap | Agak kompleks implementasi    |
 | Linked List Queue | Dinamis, efisien            | Perlu manajemen memori manual |
+
+## Tambahan
+
+| Jenis Queue       | Struktur Data | Ukuran Tetap? | Bisa Diputar? | Dinamis? |
+| ----------------- | ------------- | ------------- | ------------- | -------- |
+| Linear Queue      | Array         | ✅            | ❌            | ❌       |
+| Circular Queue    | Array         | ✅            | ✅            | ❌       |
+| Linked List Queue | Linked List   | ❌            | ✅ (otomatis) | ✅       |
