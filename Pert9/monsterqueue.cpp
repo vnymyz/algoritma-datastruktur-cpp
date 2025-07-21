@@ -34,12 +34,12 @@ int main() {
         // === Giliran Hero menyerang
         if (current.name == "Hero") {
             cout << current.name << " menyerang!\n";
-            monster.hp -= 20;  // Hero serang Goblin -20 HP
+            monster.hp = max(0, monster.hp - 20);
         }
         // === Giliran Monster menyerang
         else {
             cout << current.name << " menyerang!\n";
-            player.hp -= 10;  // Goblin serang Hero -10 HP
+            player.hp = max(0, player.hp - 10);
         }
 
         // Tampilkan kondisi HP setelah serangan

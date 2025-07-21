@@ -2,7 +2,7 @@
 using namespace std;
 
 int main() {
-    int queue[3];       // Membuat array queue dengan kapasitas 3 elemen
+    int queue[5];       // Membuat array queue dengan kapasitas 3 elemen
     int front = 0;      // Menunjukkan posisi elemen pertama (antrian depan)
     int rear = 0;       // Menunjukkan posisi elemen setelah elemen terakhir (ekor queue)
 
@@ -11,7 +11,9 @@ int main() {
     // ========================
     queue[rear++] = 10;   // Tambah 10 ke queue, rear jadi 1
     queue[rear++] = 20;   // Tambah 20 ke queue, rear jadi 2
-    queue[rear++] = 30;   // Tambah 30 ke queue, rear jadi 3 (sudah penuh)
+    queue[rear++] = 30;
+    queue[rear++] = 40;
+    queue[rear++] = 50;   
 
     // ========================
     // Menampilkan isi queue
@@ -25,8 +27,10 @@ int main() {
     // ========================
     // Dequeue (menghapus 1 elemen dari depan queue)
     // ========================
-    front++;   // Geser front ke kanan → elemen 10 dianggap keluar
-
+    front++;
+    front++; 
+    front++; 
+    
     // ========================
     // Tampilkan isi queue setelah dequeue
     // ========================
