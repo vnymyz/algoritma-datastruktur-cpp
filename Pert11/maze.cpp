@@ -2,41 +2,47 @@
 using namespace std;
 
 const int N = 3;
+
+// Maze 3x3: 1 = bisa dilewati, 0 = tembok
 int maze[N][N] = {
     {1, 1, 0},
     {0, 1, 0},
     {0, 1, 1}
 };
 
+// Fungsi rekursif untuk mencari solusi maze dari posisi (x, y)
 bool solveMaze(int x, int y, int sol[N][N]) {
-    // Jika sudah di tujuan
+    // BASE CASE: Jika sudah sampai tujuan (pojok kanan bawah)
     if (x == N - 1 && y == N - 1) {
-        sol[x][y] = 1;
-        return true;
+        sol[x][y] = 1; // Tandai sebagai bagian dari solusi
+        return true;   // Maze berhasil diselesaikan
     }
 
-    // Cek valid dan bisa dilewati
+    // CEK apakah posisi (x, y) valid dan bisa dilewati
     if (x >= 0 && y >= 0 && x < N && y < N && maze[x][y] == 1) {
-        sol[x][y] = 1;
+        sol[x][y] = 1; // Tandai posisi sekarang sebagai bagian dari solusi
 
-        // Bergerak ke bawah
+        // REKURSIF: Coba bergerak ke bawah
         if (solveMaze(x + 1, y, sol)) return true;
 
-        // Bergerak ke kanan
+        // REKURSIF: Coba bergerak ke kanan
         if (solveMaze(x, y + 1, sol)) return true;
 
-        // Backtrack
+        // BACKTRACK: Jika kedua arah gagal, batalkan tanda dan kembali mundur
         sol[x][y] = 0;
     }
 
+    // Jika tidak valid atau semua arah gagal
     return false;
 }
 
 int main() {
-    int sol[N][N] = {0};
+    int sol[N][N] = {0}; // Matriks solusi, awalnya semua 0
 
+    // Coba cari solusi mulai dari posisi (0, 0)
     if (solveMaze(0, 0, sol)) {
         cout << "Solusi Maze:\n";
+        // Cetak solusi
         for (int i = 0; i < N; i++) {
             for (int j = 0; j < N; j++)
                 cout << sol[i][j] << " ";
