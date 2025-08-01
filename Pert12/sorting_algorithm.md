@@ -387,6 +387,8 @@ quickSort([6,5,3,2])
 → hasil: [2,3,5,6]
 ```
 
+link video quick sorting : https://www.youtube.com/watch?v=Vtckgz38QHs
+
 ### Kesimpulan Sorting
 
 | Algoritma          | Strategi              | Proses Visual                                            |

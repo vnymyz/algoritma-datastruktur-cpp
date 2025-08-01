@@ -11,8 +11,8 @@ struct Treasure {
 
 // Quick Sort partition
 int partition(vector<Treasure>& arr, int low, int high) {
-    int pivot = arr[high].value;
-    int i = low - 1;
+    int pivot = arr[high].value; // angka paling besar pivotnya 
+    int i = low - 1; // 0
 
     for (int j = low; j < high; j++) {
         // untuk descending order
@@ -37,6 +37,7 @@ void quickSort(vector<Treasure>& arr, int low, int high) {
 
 int main() {
     vector<Treasure> treasures = {
+        // name, price
         {"Emas", 100000},
         {"Permata", 200000},
         {"Artefak Kuno", 150000},
@@ -46,17 +47,21 @@ int main() {
 
     cout << "=== Game Pemburu Harta Karun ===\n";
     cout << "Daftar harta yang ditemukan:\n";
+    // perulangan untuk nampilin data treasure
     for (auto& t : treasures) {
         cout << "- " << t.name << " (Nilai: Rp " << t.value << ")\n";
     }
 
+    // disini dia diurutin data nya
     quickSort(treasures, 0, treasures.size() - 1);
 
     cout << "\nHarta setelah disortir dari termahal ke termurah:\n";
+    // nampilin yang udah disortir
     for (auto& t : treasures) {
         cout << "- " << t.name << " (Nilai: Rp " << t.value << ")\n";
     }
 
+    // harta apa ya yang paling mahal
     cout << "\nPilih harta paling berharga untuk dibawa pulang: ";
     cout << treasures[0].name << " senilai Rp " << treasures[0].value << "\n";
 

@@ -12,10 +12,10 @@ struct Player {
 
 // Bubble Sort: Mengurutkan dari skor tertinggi ke terendah
 void bubbleSort(Player arr[], int n) {
-    for (int i = 0; i < n - 1; ++i) {
-        for (int j = 0; j < n - i - 1; ++j) {
-            if (arr[j].score < arr[j + 1].score) {
-                swap(arr[j], arr[j + 1]);
+    for (int i = 0; i < n - 1; ++i) { // bandingin sebelah kanan
+        for (int j = 0; j < n - i - 1; ++j) { // bandingin sebelah kiri
+            if (arr[j].score < arr[j + 1].score) { // bandingin score
+                swap(arr[j], arr[j + 1]); // dia bakal sorting atau nge swapped
             }
         }
     }

@@ -13,7 +13,7 @@ struct Item {
 // Selection Sort (dari ringan ke berat)
 void selectionSort(Item arr[], int n) {
     for (int i = 0; i < n - 1; ++i) {
-        int minIdx = i;
+        int minIdx = i; 
         for (int j = i + 1; j < n; ++j) {
             if (arr[j].weight < arr[minIdx].weight) {
                 minIdx = j;
@@ -52,7 +52,7 @@ int main() {
     int userOrder[ITEM_COUNT];
     cout << "\nMasukkan urutan nomor barang (dipisah spasi): ";
     for (int i = 0; i < ITEM_COUNT; ++i) {
-        cin >> userOrder[i];
+        cin >> userOrder[i]; // isi nya jumlah 5
     }
 
     // Periksa jawaban
