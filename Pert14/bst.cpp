@@ -3,13 +3,13 @@ using namespace std;
 
 // membuat struktur node
 struct Node {
-    int data;
-    Node* left;
-    Node* right;
+    int data; // ini root
+    Node* left; // temen sebelah kiri root
+    Node* right; // temen sebelah kanan root
 
     Node(int val) {
         data = val;
-        left = right = nullptr;
+        left = right = nullptr; // pohon ini masih kosong
     }
 };
 
@@ -112,13 +112,30 @@ void inorder(Node* root) {
     inorder(root->right);   // Kunjungi subtree kanan setelahnya
 }
 
+// Root → Left → Right
+void preorder(Node* root) {
+    if (root == nullptr) return;
+    cout << root->data << " ";       // Cetak root terlebih dahulu
+    preorder(root->left);            // Lanjut ke subtree kiri
+    preorder(root->right);           // Lanjut ke subtree kanan
+}
+
+// Left → Right → Root
+void postorder(Node* root) {
+    if (root == nullptr) return;
+    postorder(root->left);           // Kunjungi subtree kiri
+    postorder(root->right);          // Kunjungi subtree kanan
+    cout << root->data << " ";       // Cetak root setelah anak-anaknya
+}
+
+
 // Aplikasinya
 int main() {
     Node* root = nullptr;
     int choice, value;
 
     do {
-        cout << "\n1. Insert\n2. Search\n3. Delete\n4. Tampilkan Inorder\n0. Keluar\nPilih: ";
+        cout << "\n1. Insert\n2. Search\n3. Delete\n4. Tampilkan Inorder\n5. Tampilkan Preorder\n6. Tampilkan Postorder\n0. Keluar\nPilih: ";
         cin >> choice;
 
         switch (choice) {
@@ -141,8 +158,18 @@ int main() {
                 root = deleteNode(root, value);
                 break;
             case 4:
-                cout << "Inorder Traversal: ";
+                cout << "Inorder Traversal (dari kecil ke besar): ";
                 inorder(root);
+                cout << endl;
+                break;
+            case 5:
+                cout << "Preorder Traversal (urutan simpul dikunjungi sebelum anak-anaknya): ";
+                preorder(root);
+                cout << endl;
+                break;
+            case 6:
+                cout << "Postorder Traversal (urutan simpul dikunjungi setelah anak-anaknya): ";
+                postorder(root);
                 cout << endl;
                 break;
             case 0:
