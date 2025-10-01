@@ -160,7 +160,7 @@ head = n;
 
 ## Pertemuan 8 – Stack (Array & Linked List)
 
-- Konsep LIFO.
+- Konsep LIFO. (Last in First Out)
 
 - Implementasi array & linked list.
 
@@ -180,7 +180,7 @@ int main() {
 
 ## Pertemuan 9 – Queue (Array & Linked List)
 
-- Konsep FIFO.
+- Konsep FIFO. (First in First Out)
 
 - Queue biasa & circular queue.
 
@@ -349,7 +349,7 @@ Node* insert(Node* root,int val){
 
 - Representasi: adjacency list & matrix.
 
-- BFS & DFS traversal.
+- BFS (Bread First Search) & DFS (Dept First Search) traversal.
 
 - Fokus praktik: rute perjalanan peta mini.
 
